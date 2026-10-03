@@ -2,11 +2,63 @@
 <html>
 <head>
     <title>The Barrens</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+        .hero-text h1 {
+            font-size: 70px;
+            letter-spacing: 10px;
+            margin: 0;
+        }
+        .hero-text p {
+            font-size: 18px;
+            letter-spacing: 5px;
+        }
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <img src="853E340A-6C01-4380-9771-5B41077415B8.jpeg" 
-         alt="The Barrens">
-    <h1>THE BARRENS</h1>
-    <p>ARCHIVE OF THE KNOWN WORLD</p>
+    <div class="hero">
+        <img src="8E3E340A-6C01-4380-9771-5B41077415B8.jpeg"
+             alt="The Barrens">
+        <div class="hero-text">
+            <h1>THE BARRENS</h1>
+            <p>ARCHIVE OF THE KNOWN WORLD</p>
+        </div>
+    </div>
+    <div class="content">
+        <h2>WELCOME TO THE BARRENS</h2>
+        <p>
+            Explore the history, geography, creatures,
+            people and civilizations of the Barrens.
+        </p>
+    </div>
 </body>
 </html>
