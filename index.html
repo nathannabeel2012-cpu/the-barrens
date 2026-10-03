@@ -38,10 +38,64 @@
             font-size: 18px;
             letter-spacing: 5px;
         }
-        .content {
-            padding: 50px;
-            text-align: center;
-        }
+      .content {
+    padding: 60px 8%;
+    text-align: center;
+}
+.about-section {
+    margin: 50px auto 80px;
+    max-width: 900px;
+}
+.about-card {
+    display: block;
+    padding: 40px;
+    background: #1c1c1c;
+    border: 1px solid #444;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.about-card:hover {
+    background: #292929;
+    transform: translateY(-4px);
+}
+.about-card h2 {
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+.archive-title {
+    margin-bottom: 35px;
+    letter-spacing: 5px;
+}
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+.category-card {
+    display: block;
+    padding: 35px;
+    min-height: 130px;
+    background: #1c1c1c;
+    border: 1px solid #444;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.category-card:hover {
+    background: #292929;
+    transform: translateY(-4px);
+}
+.category-card h2 {
+    letter-spacing: 3px;
+    margin-top: 0;
+}
+.category-card p {
+    color: #bbbbbb;
+    line-height: 1.6;
+}
     </style>
 </head>
 <body>
@@ -54,10 +108,34 @@
         </div>
     </div>
     <div class="content">
-        <h2>WELCOME TO THE BARRENS</h2>
-        <p>
-            what the heck do i put here
-        </p>
+    <h2>WELCOME TO THE BARRENS</h2>
+    <p>
+        what the heck do i put here
+    </p>
+    <!-- ABOUT -->
+    <div class="about-section">
+        <a href="about.html" class="about-card">
+            <h2>ABOUT THE BARRENS</h2>
+            <p>
+                blahblahblahbackstorystuffirlstuff
+            </p>
+        </a>
     </div>
-</body>
-</html>
+    <!-- MAIN ARCHIVE -->
+    <h2 class="archive-title">EXPLORE THE BARRENS</h2>
+    <div class="categories">
+        <a href="history.html" class="category-card">
+            <h2>HISTORY</h2>
+            <p>blahblahblahhistoryboringtimelineboringblahblah.</p>
+        </a>
+        <a href="geography.html" class="category-card">
+            <h2>GEOGRAPHY</h2>
+            <p>worldstuff.</p>
+        </a>
+        <a href="bestiary.html" class="category-card">
+            <h2>BESTIARY</h2>
+            <p>voidspawnaminals.</p>
+        </a>
+        <a href="magic.html" class="category-card">
+            <h2>MAGIC SYSTEM</h2>
+            <p>magica.</p>
