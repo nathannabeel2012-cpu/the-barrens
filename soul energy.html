@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Energy & Souls — The Barrens</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #050505;
+            color: #eeeeee;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 8%;
+        }
+
+        /* BACK LINK */
+
+        .back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        /* BANNER */
+
+        .about-banner {
+            position: relative;
+            width: 100vw;
+            height: 500px;
+            overflow: hidden;
+            margin-left: calc(50% - 50vw);
+            margin-bottom: 80px;
+        }
+
+        .about-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .about-banner-text {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .about-banner-text h1 {
+            font-size: 50px;
+            letter-spacing: 7px;
+            margin: 0;
+        }
+
+        .about-banner-text p {
+            font-size: 15px;
+            letter-spacing: 4px;
+            margin-top: 15px;
+            color: #dddddd;
+        }
+
+        /* INTRO */
+
+        .intro {
+            margin-bottom: 90px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            color: #cfcfcf;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 850px;
+        }
+
+        /* SECTION HEADERS */
+
+        .section-title {
+            font-size: 32px;
+            letter-spacing: 5px;
+            margin-top: 90px;
+            margin-bottom: 45px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        /* LORE BLOCKS */
+
+        .lore-block {
+            display: flex;
+            align-items: center;
+            gap: 55px;
+            margin-bottom: 85px;
+        }
+
+        .lore-block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .lore-image {
+            flex: 0 0 38%;
+            height: 300px;
+            background: #111;
+            border: 1px solid #292929;
+            overflow: hidden;
+        }
+
+        .lore-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lore-text {
+            flex: 1;
+        }
+
+        .lore-text h3 {
+            font-size: 25px;
+            letter-spacing: 3px;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .lore-text p {
+            color: #cfcfcf;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .lore-text ul {
+            color: #cfcfcf;
+            line-height: 1.9;
+            padding-left: 22px;
+        }
+
+        /* SE MEASUREMENT */
+
+        .measurement {
+            margin-top: 25px;
+            padding: 25px;
+            border-left: 3px solid #777;
+            background: #0d0d0d;
+        }
+
+        .measurement strong {
+            display: block;
+            font-size: 19px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .measurement span {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        /* GIFT THRESHOLD */
+
+        .threshold {
+            margin-top: 25px;
+            padding: 25px;
+            border: 1px solid #333;
+            background: #0b0b0b;
+            text-align: left;
+        }
+
+        .threshold-number {
+            font-size: 35px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+
+        .threshold-label {
+            color: #999999;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 100px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+            text-align: center;
+            color: #666666;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .page {
+                padding: 25px 6%;
+            }
+
+            .about-banner {
+                height: 380px;
+                margin-bottom: 55px;
+            }
+
+            .about-banner-text h1 {
+                font-size: 34px;
+                letter-spacing: 4px;
+            }
+
+            .about-banner-text p {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+
+            .lore-block,
+            .lore-block.reverse {
+                flex-direction: column;
+                gap: 25px;
+                align-items: stretch;
+                margin-bottom: 65px;
+            }
+
+            .lore-image {
+                flex: none;
+                width: 100%;
+                height: 240px;
+            }
+
+            .lore-text h3 {
+                font-size: 21px;
+            }
+
+            .lore-text p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <a href="magic.html" class="back">← BACK TO MAGIC SYSTEM</a>
+
+    <!-- BANNER -->
+
+    <div class="about-banner">
+        <img src="IMG_1971.jpeg" alt="The Barrens">
+        
+        <div class="about-banner-text">
+            <h1>SOUL ENERGY & SOULS</h1>
+            <p>SOULS • SOUL ENERGY • LIVING THINGS</p>
+        </div>
+    </div>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="intro">
+        <h2>OVERVIEW</h2>
+
+        <p>
+            Souls and Soul Energy are fundamental components of life within
+            the Barrens. Every living thing possesses a soul, while Soul
+            Energy exists within living beings and serves as the source of
+            supernatural abilities known as Gifts.
+        </p>
+
+        <p>
+            Although souls cannot normally be seen or physically interacted
+            with, they can be damaged, altered, or even removed. Much about
+            their true nature remains unknown.
+        </p>
+    </section>
+
+
+    <!-- SOULS -->
+
+    <h2 class="section-title">SOULS</h2>
+
+
+    <div class="lore-block">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH SOUL IMAGE -->
+            <img src="soul-placeholder.jpg" alt="Representation of a soul">
+        </div>
+
+        <div class="lore-text">
+            <h3>WHAT IS A SOUL?</h3>
+
+            <p>
+                Every living thing possesses a soul.
+            </p>
+
+            <p>
+                A soul serves as both the source of an individual's
+                autonomy and the tether connecting them to their physical
+                body.
+            </p>
+
+            <p>
+                The soul is responsible for maintaining the connection
+                between a living being and its physical form.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block reverse">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH SOUL DAMAGE IMAGE -->
+            <img src="soul-damage-placeholder.jpg" alt="Soul damage">
+        </div>
+
+        <div class="lore-text">
+            <h3>SOUL DAMAGE & ALTERATION</h3>
+
+            <p>
+                Souls are not indestructible. They can be damaged or
+                altered, although the exact effects depend on the nature
+                and severity of the damage.
+            </p>
+
+            <p>
+                Unlike ordinary physical injuries, damage to the soul can
+                affect the fundamental connection between an individual
+                and their body.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH SOUL REMOVAL IMAGE -->
+            <img src="soul-removal-placeholder.jpg" alt="Soul removal">
+        </div>
+
+        <div class="lore-text">
+            <h3>SOUL REMOVAL</h3>
+
+            <p>
+                A soul can, under certain circumstances, be completely
+                removed from a physical body.
+            </p>
+
+            <p>
+                When this occurs, the body remains physically intact but
+                becomes little more than a husk of its former self.
+            </p>
+
+            <p>
+                The individual is no longer truly themselves.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block reverse">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH DEATH IMAGE -->
+            <img src="soul-death-placeholder.jpg" alt="A soul leaving a body">
+        </div>
+
+        <div class="lore-text">
+            <h3>SOULS AFTER DEATH</h3>
+
+            <p>
+                When a living being dies, its soul leaves the physical body
+                and vanishes.
+            </p>
+
+            <p>
+                What happens afterward is unknown.
+            </p>
+
+            <p>
+                Whether souls drift somewhere within the Barrens, return to
+                the realm in another form, reincarnate as something else,
+                or cease to exist entirely remains unknown.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- SOUL ENERGY -->
+
+    <h2 class="section-title">SOUL ENERGY</h2>
+
+
+    <div class="lore-block">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH SOUL ENERGY IMAGE -->
+            <img src="soul-energy-placeholder.jpg" alt="Soul Energy">
+        </div>
+
+        <div class="lore-text">
+            <h3>WHAT IS SOUL ENERGY?</h3>
+
+            <p>
+                Soul Energy, commonly abbreviated as <strong>SE</strong>,
+                is an energy associated with the soul.
+            </p>
+
+            <p>
+                SE exists within living beings and is the fundamental
+                source of Gifts.
+            </p>
+
+            <p>
+                Generally, the greater an individual's Soul Energy, the
+                greater their potential for supernatural ability.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block reverse">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH SE MEASUREMENT GRAPHIC -->
+            <img src="se-measurement-placeholder.jpg" alt="Soul Energy measurement">
+        </div>
+
+        <div class="lore-text">
+            <h3>MEASURING SOUL ENERGY</h3>
+
+            <p>
+                Soul Energy is measured in <strong>SU</strong>, or
+                <strong>Soul Units</strong>.
+            </p>
+
+            <div class="measurement">
+                <strong>TOTAL SE</strong>
+                <span>
+                    The total amount of Soul Energy an individual possesses.
+                </span>
+            </div>
+
+            <div class="measurement">
+                <strong>TAPPED SE</strong>
+                <span>
+                    The amount of Soul Energy an individual is currently
+                    accessing or utilizing.
+                </span>
+            </div>
+
+            <div class="threshold">
+                <div class="threshold-number">100,000 SU</div>
+                <div class="threshold-label">GIFT THRESHOLD</div>
+            </div>
+
+            <p style="margin-top: 20px;">
+                Individuals possessing more than 100,000 SU have a Gift.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- LIVING THINGS -->
+
+    <h2 class="section-title">SOULS & SE IN LIVING THINGS</h2>
+
+
+    <div class="lore-block">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH HUMAN IMAGE -->
+            <img src="human-soul-placeholder.jpg" alt="Human soul and Soul Energy">
+        </div>
+
+        <div class="lore-text">
+            <h3>HUMANS</h3>
+
+            <p>
+                All humans possess souls and Soul Energy.
+            </p>
+
+            <p>
+                Humans do not possess physical Soul Cores. Instead, their
+                soul and Soul Energy exist as invisible phenomena throughout
+                the body.
+            </p>
+
+            <p>
+                The soul maintains the connection between the person's
+                physical body and their consciousness, while Soul Energy
+                provides the foundation for Gifts.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block reverse">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH VOIDSPAWN SOUL CORE IMAGE -->
+            <img src="soul-core-placeholder.jpg" alt="Voidspawn Soul Core">
+        </div>
+
+        <div class="lore-text">
+            <h3>VOIDSPAWN & SOUL CORES</h3>
+
+            <p>
+                Voidspawn possess souls and Soul Energy, but their souls
+                function differently from those of humans.
+            </p>
+
+            <p>
+                Instead of existing invisibly throughout their bodies,
+                Voidspawn possess a physical <strong>Soul Core</strong>.
+            </p>
+
+            <p>
+                A Soul Core acts as the central vessel of the Voidspawn's
+                soul and cannot normally be destroyed by ordinary people.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="lore-block">
+
+        <div class="lore-image">
+            <!-- REPLACE WITH RECONSTITUTION IMAGE -->
+            <img src="reconstitution-placeholder.jpg" alt="Voidspawn reconstitution">
+        </div>
+
+        <div class="lore-text">
+            <h3>RECONSTITUTION</h3>
+
+            <p>
+                When a Voidspawn's physical body dies, its Soul Core
+                separates from the body and drifts away to an unknown
+                location.
+            </p>
+
+            <p>
+                Eventually, the Voidspawn reconstitutes a new physical
+                body.
+            </p>
+
+            <p>
+                The reconstituted Voidspawn does not retain its previous
+                memories.
+            </p>
+
+            <p>
+                In extremely rare cases, however, a Voidspawn may retain
+                fragments or portions of its former memories.
+            </p>
+        </div>
+
+    </div>
+
+
+    <footer>
+        THE BARRENS ARCHIVE
+    </footer>
+
+</div>
+
+</body>
+</html>
